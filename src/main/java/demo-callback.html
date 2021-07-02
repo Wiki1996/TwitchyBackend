@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>JS Callback function</h1>
+    <script>
+        //callback function is a design pattern
+        // is a function
+        // passed as parameter of another function
+        function cb(para) {
+            console.log(para);
+        }
+
+        function test(fn) {
+            console.log('test');
+            console.log(fn);
+            fn();
+        }
+
+        function call(a, b, cb) {
+            return cb(a,b);
+        }
+
+        function add(a, b) {
+            console.log(a + b);
+        }
+
+        function mul(a, b) {
+            console.log(a * b);
+        }
+
+        call(1, 2, mul);
+
+        call(1, 2, function(a, b) {
+           console.log(a * b + b);
+        });
+
+        test(cb);
+    </script>
+
+</body>
+</html>
